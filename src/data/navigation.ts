@@ -1,5 +1,4 @@
 import type {NavigationItem} from "@/types"
-import type { Category } from "@/types/index";
 
 export const navigationItems: NavigationItem[] = [
 {  

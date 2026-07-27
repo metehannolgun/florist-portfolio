@@ -4,7 +4,7 @@ import { navigationItems } from "@/data/navigation";
 
 export function Header() {
     return (
-        <header className=" top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
+        <header className=" sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
             <Container>
                 <div className="flex h-20 items-center justify-between">
                     <Link

@@ -18,10 +18,10 @@ export function HeroSection() {
                         <p className="mt-6 max-w-xl text-base leading-7 text-muted sm:text-lg">
                             Özel günlerden küçük mutluluklara kadar, her anınıza özenle hazırlanan çiçek tasarımlarıyla eşlik ediyoruz.
                         </p>
-                        <div>
+                        <div className="mt-8 grid max-w-lg grid-cols-1 gap-4 sm:grid-cols-2">
                             <Link
                                 href="/#collection"
-                                className="inline-flex items-center justify-center rounded-full bg-foreground px-7 py-3.5 text-sm font-semibold text-background transition-colors hover:bg-accent mt-2"
+                                className="inline-flex items-center justify-center rounded-full bg-foreground px-7 py-3.5 text-sm font-semibold text-background transition-colors hover:bg-accent "
                             >
                                 Koleksiyonu keşfet
                             </Link>
@@ -50,7 +50,7 @@ export function HeroSection() {
                                 Günün seçimi
                             </p>
 
-                            <p className="mt-2 text-lg font-semibold text-foreground sm:text-xl">
+                            <p className="text-lg font-semibold text-foreground sm:text-xl mt-2">
                                 Mevsim çiçekleriyle hazırlanan özel buket
                             </p>
                     </div>
