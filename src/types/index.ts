@@ -9,3 +9,11 @@ export type Category = {
     image: string;
     imageAlt: string;
 };
+export type Product = {
+    title: string;
+    category: string;
+    price: string;
+    href: string;
+    image: string;
+    imageAlt : string;   
+}
