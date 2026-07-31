@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export function HeroSection() {
     return (
-        <section className="overflow-hidden py-16 sm:py-20 lg:py-28">
+        <section className="overflow-hidden pb-12 pt-10 sm:pb-16 sm:pt-12 lg:pb-16 lg:pt-16">
             <Container>
                 <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
                     {/* Metin Alanı ( bunu üstteki grid sayesinde yaptık) */}
@@ -34,7 +34,7 @@ export function HeroSection() {
                         </div>
                     </div>
                     {/*Gorsel Alanı */}
-                    <div className="relative min-h-96 overflow-hidden rounded-[2rem] bg-surface lg:min-h-[34rem]">
+                    <div className="relative min-h-96 overflow-hidden rounded-[2rem] bg-surface lg:min-h-[34rem] lg:-translate-y-4">
                         <Image
                             src="/images/hero/hero-florist.jpg"
                             alt="Özenle hazırlanmış mevsim çiçeklerinden oluşan buket"
@@ -45,7 +45,7 @@ export function HeroSection() {
                             />
                        <div className="absolute inset-0 bg-linear-to-t from-foreground/45 via-transparent to-transparent" />
 
-                       <div className="absolute bottom-6 left-6 right-6 rounded-2xl border border-white/40 bg-white/80 p-5 backdrop-blur-md sm:bottom-8 sm:left-8 sm:right-auto sm:max-w-xs sm:p-6">
+                       <div className="absolute bottom-8 left-6 right-6 rounded-2xl border border-white/40 bg-white/80 p-5 backdrop-blur-md sm:bottom-12 sm:left-8 sm:right-auto sm:max-w-xs sm:p-6">
                             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-accent">
                                 Günün seçimi
                             </p>
