@@ -17,3 +17,8 @@ export type Product = {
     image: string;
     imageAlt : string;   
 }
+export type Testimonial = {
+    quote: string;
+    customer: string;
+    occasion: string;
+}

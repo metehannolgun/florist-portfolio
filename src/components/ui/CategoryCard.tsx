@@ -11,7 +11,7 @@ export function CategoryCard({ category }: CategoryCardProps) {
     return (
         <article>
             <Link href={category.href}
-            className = "group relative block min-h-[28rem] overflow-hidden rounded-[2rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent "
+             className="group relative block min-h-[24rem] overflow-hidden rounded-[2rem] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-accent"
             >
                 <Image
                     src={category.image}

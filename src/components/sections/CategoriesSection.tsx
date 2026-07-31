@@ -5,9 +5,9 @@ import { categories } from "@/data/categories";
 
 export function CategoriesSection() {
     return (
-        <section id="collection" className="py-20 sm:py-24 lg:py-32">
+        <section id="collection" className="pb-20 pt-12 sm:pb-24 sm:pt-16 lg:pb-32 lg:pt-20">
             <Container>
-                <div className="mb-10 max-w-2xl sm:mb-14">
+                <div className="mb-8 max-w-2xl sm:mb-10">
                     <p className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
                         Koleksiyonlarımız
                     </p>
