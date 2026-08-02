@@ -3,7 +3,7 @@ import type {NavigationItem} from "@/types"
 export const navigationItems: NavigationItem[] = [
 {  
     label: "Ana Sayfa",
-    href: "/"
+    href: "/#top"
 },
 {
     label: "Koleksiyon",
@@ -19,4 +19,3 @@ export const navigationItems: NavigationItem[] = [
     href: "/contact",
 },
 ];
-

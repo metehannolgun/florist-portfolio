@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { FaInstagram, FaWhatsapp } from "react-icons/fa6";
 import { Container } from "@/components/ui/Container";
+import { contactInfo, whatsappUrl } from "@/data/contact";
 import { navigationItems } from "@/data/navigation";
 
 export function Footer() {
@@ -8,8 +10,8 @@ export function Footer() {
   return (
     <footer className="bg-foreground text-background">
       <Container>
-        <div className="grid gap-12 py-16 sm:grid-cols-2 lg:grid-cols-[1.4fr_0.8fr_1fr_1fr] lg:py-20">
-          <div className="max-w-sm">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-10 py-12 lg:grid-cols-[1.3fr_0.7fr_1fr_1fr] lg:gap-12 lg:py-14">
+          <div className="col-span-2 max-w-sm lg:col-span-1">
             <Link
               href="/"
               className="inline-block text-2xl font-semibold uppercase tracking-[0.2em] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-background"
@@ -17,26 +19,41 @@ export function Footer() {
               Flora
             </Link>
 
-            <p className="mt-5 leading-7 text-white/60">
+            <p className="mt-4 max-w-xs text-sm leading-6 text-white/60">
               Mevsimin çiçeklerini kişisel hikâyeler ve
               doğal dokularla buluşturan butik çiçek
               atölyesi.
             </p>
 
-            <a
-              href="https://www.instagram.com/"
-              target="_blank"
-              rel="noreferrer"
-              className="mt-6 inline-flex min-h-11 items-center text-sm font-semibold text-background underline-offset-4 hover:underline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-background"
-            >
-              Instagram&apos;da takip et
-              <span
-                aria-hidden="true"
-                className="ml-2"
+            <div className="mt-5 flex flex-wrap gap-3">
+              <a
+                href="https://www.instagram.com/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Flora'yı Instagram'da takip et"
+                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 px-4 text-sm font-semibold text-background transition-colors hover:border-white/40 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-background"
               >
-                ↗
-              </span>
-            </a>
+                <FaInstagram
+                  aria-hidden="true"
+                  className="size-[1.125rem]"
+                />
+                Instagram
+              </a>
+
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Flora ile WhatsApp'ta iletişime geç"
+                className="inline-flex min-h-11 items-center gap-2 rounded-full border border-white/20 px-4 text-sm font-semibold text-background transition-colors hover:border-white/40 hover:bg-white/10 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-background"
+              >
+                <FaWhatsapp
+                  aria-hidden="true"
+                  className="size-[1.125rem]"
+                />
+                WhatsApp
+              </a>
+            </div>
           </div>
 
           <nav aria-label="Alt navigasyon">
@@ -44,7 +61,7 @@ export function Footer() {
               Menü
             </h2>
 
-            <ul className="mt-5 space-y-3">
+            <ul className="mt-4 space-y-2.5">
               {navigationItems.map((item) => (
                 <li key={item.href}>
                   <Link
@@ -63,58 +80,53 @@ export function Footer() {
               İletişim
             </h2>
 
-            <address className="mt-5 space-y-3 text-sm not-italic leading-6 text-white/70">
+            <address className="mt-4 space-y-2.5 text-sm not-italic leading-6 text-white/70">
               <p>
-                Moda Caddesi No: 24
+                {contactInfo.address.street}
                 <br />
-                Kadıköy, İstanbul
+                {contactInfo.address.district}
               </p>
 
               <p>
                 <a
-                  href="tel:+902120000000"
+                  href={contactInfo.phoneHref}
                   className="transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-background"
                 >
-                  +90 212 000 00 00
+                  {contactInfo.phoneDisplay}
                 </a>
               </p>
 
               <p>
                 <a
-                  href="mailto:hello@floraatelier.com"
-                  className="transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-background"
+                  href={`mailto:${contactInfo.email}`}
+                  className="break-all transition-colors hover:text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-background"
                 >
-                  hello@floraatelier.com
+                  {contactInfo.email}
                 </a>
               </p>
             </address>
           </div>
 
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/60">
               Çalışma saatleri
             </h2>
 
-            <dl className="mt-5 space-y-3 text-sm text-white/70">
-              <div className="flex justify-between gap-4">
-                <dt>Pazartesi–Cuma</dt>
-                <dd className="shrink-0">09.00–19.00</dd>
-              </div>
-
-              <div className="flex justify-between gap-4">
-                <dt>Cumartesi</dt>
-                <dd className="shrink-0">10.00–18.00</dd>
-              </div>
-
-              <div className="flex justify-between gap-4">
-                <dt>Pazar</dt>
-                <dd className="shrink-0">Kapalı</dd>
-              </div>
+            <dl className="mt-4 space-y-2.5 text-sm text-white/70">
+              {contactInfo.workingHours.map((item) => (
+                <div
+                  key={item.day}
+                  className="flex justify-between gap-4"
+                >
+                  <dt>{item.day}</dt>
+                  <dd className="shrink-0">{item.hours}</dd>
+                </div>
+              ))}
             </dl>
           </div>
         </div>
 
-        <div className="flex flex-col gap-3 border-t border-white/15 py-6 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
+        <div className="flex flex-col gap-2 border-t border-white/15 py-5 text-xs text-white/60 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {currentYear} Flora Atelier. Tüm hakları
             saklıdır.
@@ -122,15 +134,6 @@ export function Footer() {
 
           <p>
             Portfolyo amacıyla hazırlanmış örnek marka.
-          </p>
-        </div>
-
-        <div
-          aria-hidden="true"
-          className="overflow-hidden border-t border-white/10"
-        >
-          <p className="py-8 text-center text-[clamp(4rem,16vw,12rem)] font-semibold leading-[0.75] tracking-[-0.06em] text-white/5">
-            FLORA
           </p>
         </div>
       </Container>

@@ -1,8 +1,20 @@
+"use client";
+
+import type { MouseEvent } from "react";
 import Link from "next/link";
 import { Container } from  "@/components/ui/Container";
 import { navigationItems } from "@/data/navigation";
 
 export function Header() {
+    function handleHomeClick(event: MouseEvent<HTMLAnchorElement>) {
+        if (window.location.pathname !== "/") {
+            return;
+        }
+
+        event.preventDefault();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
     return (
         <header className=" sticky top-0 z-50 border-b border-border bg-background/90 backdrop-blur-md">
             <Container>
@@ -19,6 +31,7 @@ export function Header() {
                                 <li key={item.href}>
                                     <Link
                                         href={item.href}
+                                        onClick={item.href === "/#top" ? handleHomeClick : undefined}
                                         className="text-sm font-medium text-muted transition-colors hover:text-foreground"
                                     >
                                         {item.label}
