@@ -7,7 +7,7 @@ import { SocialSection } from "@/components/sections/SocialSection";
 
 export default function Homepage() {
   return (
-    <main>
+    <main id="top">
       <HeroSection />
       <CategoriesSection />
       <FeaturedProductsSection />
